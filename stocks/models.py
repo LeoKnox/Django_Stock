@@ -16,3 +16,6 @@ class Door(models.Model):
     material = models.CharField(max_length=50)
     wall = models.CharField(max_length=1, choices=WALL)
     location = models.IntegerField();
+
+    def __str__(self):
+        return self.material

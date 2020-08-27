@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import Http404
+
+from .models import Room
 
 def home(request):
-    return HttpResponse('<h1>Home View</p>')
+    rooms = Room.objects.all()
+    return render(request, 'home.html', {'rooms': rooms})
 
 def room_detail(request, room_id):
-    return HttpResponse(f'<h1>Room view with id {room_id}<h1>')
+    try:
+        room = Room.objects.get(id=room_id)
+    except Room.DoesNotExist:
+        raise Http404('Room not found')
+    return render(request, 'room_detail.html', {'room': room})
