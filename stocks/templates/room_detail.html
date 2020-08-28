@@ -1,1 +1,19 @@
-Room Detail
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h3>{{ room.name|capfirst }}</h3>
+    <p>{{ room.description }}</p>
+    <p>Floor: {{ room.floor }}</p>
+    <p>Width: {{ room.width }}    Length: {{ room.length }}</p>
+    <p>Room Lit: {{ room.lighting }}</p>
+    {% if room.doors.all %}
+        <p>Doors</p>
+        <ul>
+            {% for door in room.doors.all %}
+                <li>{{ door.material }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <p>Created on: {{ room.submission_date|date:"M d Y" }}</p>
+</div>
+{% endblock %}

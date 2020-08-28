@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Django App</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    </head>
+    <body class="wide">
+        <header>
+            <h1>Dungeon App</h1>
+            <img src="{% static 'images/banner.jpg' %}">
+        </header>
+        <div class="main-wrapper">
+            <h3>
+                Simple app using Django to retrieve and display data. Click on name
+                to display individual data.
+            </h3>
+            <div>
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div>
+            <footer>
+                Quick Dungeon App in Django
+            </footer>
+        </div>
+    </body>
+</html>

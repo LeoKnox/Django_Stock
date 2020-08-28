@@ -1,13 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
 <div>
-    {% for room in rooms %}
-        <div class="roomname">
-            <a href="{% url 'room_detail' room.id %}"
-                <h3>{{ room.name|capfirst }}</h3>
-            </a>
-            <p>{{ room.description }}</p>
-            <p class="hidden">Floor: {{ room.floor }}</p>
-            <p>Width: {{ room.width }}</p>
-            <p>Length: {{ room.length }}</p>
-        </div>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Floor</th>
+            <th>Width</th>
+            <th>Length</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>
+                <a href="{% url 'room_detail' room.id %}">
+                    {{ room.name }}
+                </a>
+            </td>
+            <td>{{ room.description }}</td>
+            <td>{{ room.floor }}</td>
+            <td>{{ room.width }}</td>
+            <td>{{ room.length }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
+{% endblock %}
