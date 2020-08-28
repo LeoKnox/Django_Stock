@@ -1,0 +1,35 @@
+body {
+    background-color: lightgray;
+}
+
+table {
+    background-color: lightskyblue;
+    margin-right: 15px;
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+th {
+    border: 2px solid darkblue;
+    padding: 5px;
+}
+
+h1 {
+    position: absolute;
+    color: rgb(36, 36, 214);
+    font-size: 3.2em;
+    margin:  110px 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: rgb(36, 36, 214);
+    margin: 20px 10px;
+    width: 860px;
+}
+
+footer {
+    padding-top: 15px;
+    font-size: .8em;
+}
