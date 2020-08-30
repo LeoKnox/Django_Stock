@@ -1,0 +1,8 @@
+d = Door(material='Wood', wall='E', location=2)
+d = Door(material='Wood', wall='N', location=4)
+d = Door(material='Iron', wall='S', location=3)
+d = Door(material='Iron', wall='N', location=2)
+d.save()
+r = Room(name='Entry', floor='dirt', description='Entrance of dungeon', width=5, length=5, lighting='on', submission_date='2020/8/30 14:30')
+r = Room(name='Storage', floor='wood', description='Store room', width=6, length=4, lighting='on', submission_date='2020/8/30 14:31')
+r = Room(name='Guards', floor='stone', description='Room with guards', width=8, length=7, lighting='on', submission_date='2020/8/30 14:35')
